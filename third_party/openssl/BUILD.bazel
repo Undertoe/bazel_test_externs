@@ -1,0 +1,37 @@
+
+
+load(":openssl.bzl", "openssl_component")
+# load("@rules_pkg//pkg:pkg.bzl", "pkg_tar")
+
+openssl_component(
+    name = "openssl",
+)
+
+# filegroup(
+#     name = "openssl_include", 
+#     srcs = glob(["include/**"]),
+# )
+
+# filegroup(
+#     name = "openssl_lib",
+#     srcs = glob(["lib/*"]),
+# )
+
+# filegroup(
+#     name = "openssl_bin",
+#     srcs = glob(["bin/*"]),
+# )
+
+
+# pkg_tar(
+#     name = "openssl_sdk_tar",
+#     src = [
+#         ":openssl_include",
+#         ":openssl_lib",
+#         ":openssl_bin",
+#     ],
+#     strip_prefix = ".",
+#     package_dir = ".",
+#     extension = "tar.gz",
+#     visibility = ["//visibility:public"],
+# )

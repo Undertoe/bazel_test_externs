@@ -1,0 +1,22 @@
+
+module(
+    name = "externs",
+    version = "0.0.0",
+)
+
+
+bazel_dep(name = "rules_pkg", version = "1.2.0")
+bazel_dep(name = "rules_foreign_cc", version = "0.14.0")
+# git = use_extension("//extensions:fetch_git.bzl", "fetch_git")
+
+repo = use_extension("//extensions:fetch_git.bzl", "fetch_git")
+
+
+# add src for all of our internal items
+repo.git(
+    name="openssl_src", 
+    remote = "https://github.com/openssl/openssl.git", 
+    tag = "openssl-3.5.4",
+)
+use_repo(repo, "openssl_src")
+
